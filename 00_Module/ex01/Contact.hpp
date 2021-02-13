@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class Contact
 {
@@ -23,5 +24,6 @@ class Contact
 		std::string	favorite_meal;
 		std::string	underwear_color;
 		std::string	darkest_secret;
+
 		std::string	take_data(void);
 };

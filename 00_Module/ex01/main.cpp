@@ -4,10 +4,18 @@
 void	search(std::vector <Contact> contact_list)
 {
 	std::vector <Contact>::iterator it;
-
+	std::cout.fill(' ');
+	std::cout.width(10);
 	for (it = contact_list.begin() ; it < contact_list.end(); ++it)
 	{
-		std::cout << it->get_index() << " -- index " << it->get_first_name() << " -- name\n";
+		std::cout << "|";
+		std::cout << it->get_index();
+		std::cout << "|";
+		std::cout << it->get_first_name();
+		std::cout << "|";
+		std::cout << it->get_second_name();
+		std::cout << "|";
+		std::cout << it->get_nickname();
 	}
 }
 
