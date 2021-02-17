@@ -4,7 +4,7 @@ FLAGS	=	-Wall -Werror -Wextra
 GCC		=	clang++ $(FLAGS)
 
 
-%.o: %.c
+%.o: %.cpp
 	$(GCC) $< -o $@ 
 
 all:$(OBJ)

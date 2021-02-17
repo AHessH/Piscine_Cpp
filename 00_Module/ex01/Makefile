@@ -6,7 +6,7 @@ INCLUDES	=	-I.
 GCC			=	clang++ $(FLAGS) $(INCLUDES)
 
 
-%.o: %.c
+%.o: %.cpp
 	$(GCC) $< -o $@
 
 all:$(OBJ)
