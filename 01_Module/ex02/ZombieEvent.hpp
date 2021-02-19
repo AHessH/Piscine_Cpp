@@ -1,6 +1,7 @@
 #ifndef __ZOMBIE_EVENT_HPP
 # define __ZOMBIE_EVENT_HPP
-
+#include <iostream>
+#include <string>
 #define NAME_STACK_SIZE 5
 
 #include "Zombie.hpp"

@@ -1,4 +1,7 @@
 #include "ZombieHorde.hpp"
+#include <iostream>
+#include <string>
+#include <stdlib.h>
 
 ZombieHorde::ZombieHorde(unsigned int horde_size)
 {

@@ -1,7 +1,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-
-// в обоих случаях ссылка
+#include <iostream>
+#include <string>
 
 int main()
 {
