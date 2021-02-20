@@ -1,11 +1,11 @@
-NAME     := a.out
+NAME		:= a.out
 
-SRCS     := Pony.cpp main.cpp
-HDRS     := Pony.hpp
-OBJS     := $(SRCS:.cpp=.o)
+SRCS		:= Pony.cpp main.cpp
+HDRS		:= Pony.hpp
+OBJS		:= $(SRCS:.cpp=.o)
 
-CXX      := clang++
-CXXFLAGS := -std=c++98 -Wall -Werror -Wextra
+CXX			:= clang++
+CXXFLAGS	:= -std=c++98 -Wall -Werror -Wextra
 
 all: $(NAME)
 

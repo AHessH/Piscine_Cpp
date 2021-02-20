@@ -1,10 +1,10 @@
-NAME     := replace
+NAME		:= replace
 
-SRCS     := replace.cpp
-OBJS     := $(SRCS:.cpp=.o)
+SRCS		:= replace.cpp
+OBJS		:= $(SRCS:.cpp=.o)
 
-CXX      := clang++
-CXXFLAGS := -g -std=c++98 -Wall -Werror -Wextra
+CXX			:= clang++
+CXXFLAGS	:= -g -std=c++98 -Wall -Werror -Wextra
 
 all: $(NAME)
 

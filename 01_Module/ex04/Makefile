@@ -1,10 +1,10 @@
-NAME     := a.out
+NAME		:= a.out
 
-SRCS     := ex04.cpp
-OBJS     := $(SRCS:.cpp=.o)
+SRCS		:= ex04.cpp
+OBJS		:= $(SRCS:.cpp=.o)
 
-CXX      := clang++
-CXXFLAGS := -g -std=c++98 -Wall -Werror -Wextra
+CXX			:= clang++
+CXXFLAGS	:= -g -std=c++98 -Wall -Werror -Wextra
 
 all: $(NAME)
 

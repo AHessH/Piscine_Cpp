@@ -1,11 +1,11 @@
-NAME     := a.out
+NAME		:= a.out
 
-SRCS     := Zombie.cpp ZombieHorde.cpp main.cpp
-HDRS     := Zombie.hpp ZombieHorde.hpp
-OBJS     := $(SRCS:.cpp=.o)
+SRCS		:= Zombie.cpp ZombieHorde.cpp main.cpp
+HDRS		:= Zombie.hpp ZombieHorde.hpp
+OBJS		:= $(SRCS:.cpp=.o)
 
-CXX      := clang++
-CXXFLAGS := -g -std=c++98 -Wall -Werror -Wextra
+CXX			:= clang++
+CXXFLAGS	:= -g -std=c++98 -Wall -Werror -Wextra
 
 all: $(NAME)
 

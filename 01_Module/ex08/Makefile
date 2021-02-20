@@ -1,10 +1,10 @@
-NAME     := a.out
-HDRS	 := Human.hpp
-SRCS     := Human.cpp main.cpp
-OBJS     := $(SRCS:.cpp=.o)
+NAME		:= a.out
+HDRS		:= Human.hpp
+SRCS		:= Human.cpp main.cpp
+OBJS		:= $(SRCS:.cpp=.o)
 
-CXX      := clang++
-CXXFLAGS := -g -std=c++98 -Wall -Werror -Wextra
+CXX			:= clang++
+CXXFLAGS	:= -g -std=c++98 -Wall -Werror -Wextra
 
 all: $(NAME)
 

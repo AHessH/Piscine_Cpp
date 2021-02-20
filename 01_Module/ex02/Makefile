@@ -1,11 +1,11 @@
-NAME     := a.out
+NAME		:= a.out
 
-SRCS     := Zombie.cpp ZombieEvent.cpp main.cpp
-HDRS     := Zombie.hpp ZombieEvent.hpp
-OBJS     := $(SRCS:.cpp=.o)
+SRCS		:= Zombie.cpp ZombieEvent.cpp main.cpp
+HDRS		:= Zombie.hpp ZombieEvent.hpp
+OBJS		:= $(SRCS:.cpp=.o)
 
-CXX      := clang++
-CXXFLAGS := -std=c++98 -Wall -Werror -Wextra
+CXX			:= clang++
+CXXFLAGS	:= -std=c++98 -Wall -Werror -Wextra
 
 all: $(NAME)
 
