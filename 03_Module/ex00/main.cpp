@@ -4,14 +4,18 @@
 
 int		main(void)
 {
-	FragTrap a;
-	a.set_name("Genry");
-	FragTrap b(a);
-	a.set_name("Vova");
-	std::cout << b.get_name() << std::endl;
-	b.beRepaired(10);
-	std::cout << a.get_name() << std::endl;
-	b.vaulthunter_dot_exe("Igor");
-	b.takeDamage(10);
+	FragTrap Copy;
+	FragTrap Ivan("Ivan");
+	FragTrap Copy2(Ivan);
+
+	Copy = Ivan;
+	std::cout << Copy.get_name() << " " << Ivan.get_name() << " " << Copy2.get_name() << std::endl;
+	Ivan.beRepaired(10);
+	Ivan.takeDamage(20);
+	Ivan.beRepaired(10);
+	Ivan.takeDamage(5);
+	Ivan.rangedAttack("Evgeny");
+	Ivan.meleeAttack("Vova");
+	Ivan.vaulthunter_dot_exe("Nikolay");
 	return (0);
 }

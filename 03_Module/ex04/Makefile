@@ -1,6 +1,6 @@
 NAME		:= a.out
-HDRS		:= FragTrap.hpp ScavTrap.hpp
-SRCS		:= FragTrap.cpp ScavTrap.cpp main.cpp
+HDRS		:= FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp SuperTrap.hpp
+SRCS		:= FragTrap.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp SuperTrap.cpp main.cpp
 OBJS		:= $(SRCS:.cpp=.o)
 
 CXX			:= clang++

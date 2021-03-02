@@ -1,12 +1,11 @@
-#ifndef __SCAV_TRAP_HPP
-#define __SCAV_TRAP_HPP
+#ifndef __CLAP_TRAP_HPP
+#define __CLAP_TRAP_HPP
 
 #include <string>
 #include <iostream>
 #include <stdlib.h>
-#define MAX_ATACK 5
 
-class ScavTrap
+class ClapTrap
 {
 	private:
 		std::string	_name;
@@ -21,14 +20,14 @@ class ScavTrap
 		void set_params();
 
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const &robo);
-		~ScavTrap();
-		ScavTrap &operator=(ScavTrap const &robo);
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(ClapTrap const &robo);
+		~ClapTrap();
+		ClapTrap &operator=(ClapTrap const &robo);
 	//set func
 		void set_name(std::string name) {_name = name;};
-		void set_hit_poinst(unsigned int hp) {_hit_points = hp;};
+		void set_hit_points(unsigned int hp) {_hit_points = hp;};
 		void set_max_hit_points(unsigned int mhp) {_max_hit_points = mhp;};
 		void set_energy_points(unsigned int ep) {_energy_points = ep;};
 		void set_max_energy_points(unsigned int mep) {_max_energy_points = mep;};
@@ -38,7 +37,7 @@ class ScavTrap
 		void set_armor_damage_reduction(unsigned int armor) {_armor_damage_reduction = armor;};
 	//get func
 		std::string get_name(void) const {return (_name);};
-		unsigned int get_hit_poinst(void) const {return (_hit_points);};
+		unsigned int get_hit_points(void) const {return (_hit_points);};
 		unsigned int get_max_hit_points(void) const {return (_max_hit_points);};
 		unsigned int get_energy_points(void) const {return (_energy_points);};
 		unsigned int get_max_energy_points(void) const {return (_max_energy_points);};
@@ -46,13 +45,6 @@ class ScavTrap
 		unsigned int get_melee_attack_damage(void) const {return (_melee_attack_damage);};
 		unsigned int get_ranged_attack_damage(void) const {return (_ranged_attack_damage);};
 		unsigned int get_armor_damage_reduction(void) const {return (_armor_damage_reduction);};
-	//actions func
-		void rangedAttack(std::string const & target) const ;
-		void meleeAttack(std::string const & target) const ;
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		void challengeNewcomer(void) const;
-
 };
 
 #endif

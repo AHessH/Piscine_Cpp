@@ -22,7 +22,7 @@ FragTrap::FragTrap(std::string name)
 {
 	set_params();
 	_name = name;
-	std::cout << "Oh god, " << _name << " will be created!" << std::endl;
+	std::cout << _name << " will be created!" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &robo)

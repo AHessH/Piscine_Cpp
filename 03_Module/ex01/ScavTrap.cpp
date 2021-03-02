@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(std::string name)
 {
 	set_params();
 	_name = name;
-	std::cout << "Oh god, " << _name << " will be created!" << std::endl;
+	std::cout << _name << " will be created!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &robo)
@@ -55,13 +55,13 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &robo)
 
 void ScavTrap::rangedAttack(std::string const & target) const
 {
-	std::cout << "FR4G-TP <" << _name <<"> attacks <" << target << "> at range causing <"
+	std::cout << "SCAV-TP <" << _name <<"> attacks <" << target << "> at range causing <"
 				<< _ranged_attack_damage << "> points of damage!" << std::endl;
 }
 
 void ScavTrap::meleeAttack(std::string const & target) const
 {
-	std::cout << "FR4G-TP <" << _name <<"> attacks <" << target << "> at melee causing <"
+	std::cout << "SCAV-TP <" << _name <<"> attacks <" << target << "> at melee causing <"
 				<< _melee_attack_damage << "> points of damage!" << std::endl;
 }
 
@@ -70,7 +70,7 @@ void ScavTrap::takeDamage(unsigned int amount)
 	unsigned int damage;
 
 	damage = (amount <= _armor_damage_reduction) ? 0 : amount - _armor_damage_reduction;
-	std::cout << "FR4G-TP <" << _name << "> take " << damage << " damage" << std::endl;
+	std::cout << "SCAV-TP <" << _name << "> take " << damage << " damage" << std::endl;
 	_hit_points = (damage >= _hit_points) ? 0 : _hit_points - damage;
 }
 
@@ -79,7 +79,7 @@ void ScavTrap::beRepaired(unsigned int amount)
 	unsigned int heal;
 
 	heal = (_hit_points + amount >= _max_hit_points) ? _max_hit_points - _hit_points : amount;
-	std::cout << "FR4G-TP <" << _name << "> healed to " << heal << " hit points" << std::endl;
+	std::cout << "SCAV-TP <" << _name << "> healed to " << heal << " hit points" << std::endl;
 	_hit_points += heal;
 }
 
@@ -90,5 +90,5 @@ void ScavTrap::challengeNewcomer(void) const
 
 	num = random() % 2;
 	action = (num == 0) ? "pretends to work" : "does nothing";
-	std::cout << "FR4G-TP <" << _name << "> " << action << std::endl;
+	std::cout << "SCAV-TP <" << _name << "> " << action << std::endl;
 }
