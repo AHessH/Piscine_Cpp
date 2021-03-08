@@ -3,7 +3,7 @@
 Bureaucrat::Bureaucrat()
 {
 	_grade = 150;
-	_name = "";
+	_name = "undefined";
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &obj)
