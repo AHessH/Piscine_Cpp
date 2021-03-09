@@ -43,12 +43,22 @@ void        Form::check_requred(int requred_exec, int requred_sign) const
 		throw Form::GradeTooHighException();
 }
 
-void        Form::check_access(Bureaucrat const &obj) const
+void        Form::check_sign_access(Bureaucrat const &obj) const
 {
   if (_requred_sign < obj.get_grade())
     throw Form::GradeTooLowException();
 }
 
+void			Form::check_exec_access(Bureaucrat const &obj) const
+{
+  if (_requred_exec < obj.get_grade())
+    throw Form::GradeTooLowException();
+}
+void			Form::check_sign() const
+{
+  if (!_sign_status)
+    throw Form::FormNotBeSignedException();
+}
 
 std::ostream  &operator<< (std::ostream &out, const Form &obj)
 {
@@ -65,7 +75,7 @@ void          Form::beSigned(Bureaucrat const &obj)
   {
     try
     {
-      check_access(obj);
+      check_sign_access(obj);
       std::cout << obj.get_name() << " signs " << get_name() << std::endl;
       _sign_status = true;
     }
@@ -73,5 +83,21 @@ void          Form::beSigned(Bureaucrat const &obj)
     {
       std::cout << obj.get_name() << " cannot sign " << get_name() <<  " because " << exception.what() << std::endl;
     }
+  }
+}
+
+void          Form::execute(Bureaucrat const & executor) const
+{
+  try
+  {
+    check_exec_access(executor);
+    check_sign();
+    std::cout << executor.get_name() << " executes " << get_name() << std::endl;
+  }
+  catch(std::exception &exception)
+  {
+    std::cout << executor.get_name() << " cannot exec " << get_name() <<  " because " << exception.what() << std::endl;
+    check_sign();
+    check_exec_access(executor);
   }
 }

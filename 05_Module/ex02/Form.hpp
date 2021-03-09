@@ -9,12 +9,14 @@ class Bureaucrat;
 class Form
 {
 	private:
-	  std::string	_name;
-		bool		_sign_status;
-		int			_requred_sign;
-    int         	_requred_exec;
-    void        	check_requred(int, int) const;
-    void        	check_access(Bureaucrat const &obj) const;
+		std::string		_name;
+		bool			_sign_status;
+		int				_requred_sign;
+    	int         	_requred_exec;
+    	void        	check_requred(int, int) const;
+    	void        	check_sign_access(Bureaucrat const &obj) const;
+		void			check_exec_access(Bureaucrat const &obj) const;
+		void			check_sign() const;
 
 	public:
 		Form();
@@ -28,8 +30,8 @@ class Form
     	int           get_requred_exec() const {return (_requred_exec);};
 
     	void          beSigned(Bureaucrat const &obj);
-		
-    	Form		      &operator=(Form const &);
+		virtual void  execute(Bureaucrat const & executor) const;
+    	Form		  &operator=(Form const &);
 
 		class GradeTooHighException: public std::exception {
 			virtual const char *what() const throw() {return ("GradeTooHighException");};
@@ -37,6 +39,9 @@ class Form
 
 		class GradeTooLowException: public std::exception {
 			virtual const char *what() const throw() {return ("GradeTooLowException");};
+		};
+		class FormNotBeSignedException: public std::exception {
+			virtual const char *what() const throw() {return ("FormNotBeSignedException");};
 		};
 };
 
