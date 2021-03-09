@@ -45,7 +45,7 @@ void        Form::check_requred(int requred_exec, int requred_sign) const
 
 void        Form::check_access(Bureaucrat const &obj) const
 {
-  if (_requred_sign >= obj.get_grade())
+  if (_requred_sign < obj.get_grade())
     throw Form::GradeTooLowException();
 }
 
@@ -59,7 +59,7 @@ std::ostream  &operator<< (std::ostream &out, const Form &obj)
 
 void          Form::beSigned(Bureaucrat const &obj)
 {
-  if (!_sign_status)
+  if (_sign_status)
     std::cout << "Form " << get_name() << " has already been signed" << std::endl;
   else
   {
@@ -67,6 +67,7 @@ void          Form::beSigned(Bureaucrat const &obj)
     {
       check_access(obj);
       std::cout << obj.get_name() << " signs " << get_name() << std::endl;
+      _sign_status = true;
     }
     catch(std::exception &exception)
     {
