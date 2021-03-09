@@ -3,31 +3,20 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
+#include "Intern.hpp"
 
 #include <iostream>
 #include <string>
 
 int		main(void)
 {
-	Bureaucrat a("vasya", 1);
-	Bureaucrat b("danila", 150);
-	PresidentialPardonForm pre("me");
-	ShrubberyCreationForm shr("tree");
-	RobotomyRequestForm robo("robo");
+	Intern intern;
 
-	robo.execute(a);
-	robo.execute(b);
+	Form *pre = intern.makeForm("presidental pardon", "pre");
+	Form *rob = intern.makeForm("robotomy request", "rob");
+	Form *shr = intern.makeForm("shrebbery creation", "shr");
+	Form *undef = intern.makeForm("undef", "undef");
 
-	a.signForm(pre);
-	a.executeForm(pre);
-
-	robo.beSigned(a);
-	robo.execute(a);
-
-	shr.beSigned(a);
-	shr.execute(b);
-	shr.execute(a);
-
+	std::cout << *pre << *rob << *shr;
 	return (0);
 }
