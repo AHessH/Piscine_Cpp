@@ -1,32 +1,31 @@
-/* 
-проверка на nan inf inff nanf
-Если в конце строки есть f и в строке имеется '.'  то считается float,
-Если в строке имеется '.' и только числа, то считается double
-Если в конце строки имеются только числа, считается int
-Если в конце строки имеется один символ и это не число, то char
+#include "ScalarConv.hpp"
+#include <ctype.h>
 
-генерировать исключение если это inf или nan для int и char
-так же генерировать исключение для char если это не печатаемый тип
-
-использовать как базовый тип double
-*/
-
-#include <iostream>
-#include <string>
-#include <limits>
-int		main(void)
+int		getPrecision(char *num)
 {
-	double inf = std::numeric_limits<double>::infinity();
-	float hello;
-
-
-	try
+	int precision = 0;
+	int i = 0;
+	while (num[i] && num[i] != '.')
+		i++;
+	i++;
+	while (num[i] && isdigit(num[i]))
 	{
-		hello = static_cast<float>(inf);
-		std::cout << hello << std::endl;
+		i++;
+		precision++;
 	}
-	catch(std::exception &except)
-	{
+	return (precision);
+}
 
+int		main(int av, char **ac)
+{
+	if (av == 2)
+	{
+		ScalarConv num(atof(ac[1]), getPrecision(ac[1]));
+		num.printInFormat();
 	}
+	else
+	{
+		std::cout << "Not a valid argument count!" << std::endl;
+	}
+	return (0);
 }
