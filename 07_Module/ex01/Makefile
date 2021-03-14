@@ -1,6 +1,6 @@
 NAME		:= a.out
 SRCS		:= main.cpp
-HDRS		:= whatever.hpp
+HDRS		:= iter.hpp
 OBJS		:= $(SRCS:.cpp=.o)
 
 CXX			:= clang++
