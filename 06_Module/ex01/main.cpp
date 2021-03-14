@@ -49,4 +49,4 @@ int main(void)
 	Data *obj = deserialize(serialize());
 	std::cout << obj->s1 << " " << obj->s2 << " " << obj->num << std::endl;
 	return (0);
-}	
+}
