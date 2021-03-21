@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <vector>
 #include <list>
+
 template <class T>
  bool easyfind(T item, int value)
 {
